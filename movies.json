@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genre": "Drama",
+    "director": "Frank Darabont",
+    "rate": 9.3
+  },
+  {
+    "id": "6dcd4ce2-df90-414e-9a06-083f4c9faabc",
+    "title": "The Godfather",
+    "year": 1972,
+    "genre": "Crime",
+    "director": "Francis Ford Coppola",
+    "rate": 9.2
+  },
+  {
+    "id": "5e5d5dd5-5a5d-5d5d-5d5d-5d5d5d5d5d5d",
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genre": "Action",
+    "director": "Christopher Nolan",
+    "rate": 9
+  },
+  {
+    "id": "0e0d0c0b-0a09-0807-0605-040302010000",
+    "title": "The 50th Movie",
+    "year": 2022,
+    "genre": "Sci-Fi",
+    "director": "Director Name",
+    "rate": 8
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "title": "Spider Man: No Way Home",
+    "year": 2020,
+    "genre": "Action",
+    "director": "Sam Raimi",
+    "rate": 5
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "title": "Spider Man: Far From Home",
+    "year": 2020,
+    "genre": "Action",
+    "director": "Sam Raimi",
+    "rate": 5
+  }
+]

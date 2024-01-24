@@ -1,0 +1,188 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple API for a fake movie database",
+    "version": "1.0.0",
+    "title": "Simple Movie Database API"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "movies",
+      "description": "Everything about your Movies"
+    }
+  ],
+  "paths": {
+    "/movies": {
+      "get": {
+        "tags": ["movies"],
+        "summary": "Get all movies",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["movies"],
+        "summary": "Add a new movie",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Movie object that needs to be added to the database",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/movies/page/{page}": {
+      "get": {
+        "tags": ["movies"],
+        "summary": "Get movies by page",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/movies/search": {
+      "get": {
+        "tags": ["movies"],
+        "summary": "Get movies by query parameters",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "genre",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "director",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "rate",
+            "in": "query",
+            "required": false,
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/movies/{id}": {
+      "put": {
+        "tags": ["movies"],
+        "summary": "Update an existing movie",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Movie object that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Movie not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["movies"],
+        "summary": "Deletes a movie",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Movie not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Movie": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "title": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "genre": {
+          "type": "string"
+        },
+        "director": {
+          "type": "string"
+        },
+        "rate": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
