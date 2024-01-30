@@ -6,6 +6,17 @@ const getAll = (req, res) => {
     res.json(movies);
 };
 
+const getById = (req, res) => {
+    const { id } = req.params;
+    const movie = movies.find(movie => movie.id === id);
+
+    if (movie) {
+        res.json(movie);
+    } else {
+        res.status(404).json({ message: 'Movie not found' });
+    }
+};
+
 const getPaged = (req, res) => {
     const page = req.params.page;
     const limit = 10;
@@ -36,8 +47,9 @@ const getByQueryParams = (req, res) => {
     if (rate) {
         resultMovies = resultMovies.filter(movie => movie.rate >= rate);
     }
-
+    console.log(resultMovies)
     res.json(resultMovies);
+
 };
 
 const post = (req, res) => {
@@ -91,6 +103,7 @@ const deleteMovie = (req, res) => {
 
 module.exports = {
     getAll,
+    getById,
     getPaged,
     getByQueryParams,
     post,

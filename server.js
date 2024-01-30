@@ -15,7 +15,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.get('/', (req, res) => {
     res.redirect('/api-docs');
   });
-  app.use('/movies', apiKeyMiddleware, routes);
+  app.use('/', apiKeyMiddleware, routes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
